@@ -3,13 +3,32 @@
  */
 package com.nexmo.example.voiceproxy
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello world."
-        }
-}
+import com.nexmo.client.voice.ncco.ConnectAction
+import com.nexmo.client.voice.ncco.Ncco
+import com.nexmo.client.voice.ncco.PhoneEndpoint
+import io.ktor.application.*
+import io.ktor.http.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 
 fun main(args: Array<String>) {
-    println(App().greeting)
+    embeddedServer(Netty, 8080) {
+        routing {
+            get("/ncco") {
+
+                // Construct the NCCO
+                val ncco = Ncco(
+                        ConnectAction.Builder()
+                                .endpoint(PhoneEndpoint.Builder("TO_NUMBER").build())
+                                .from("FROM_NUMBER")
+                                .build()
+                ).toJson()
+
+                call.response.header("Access-Control-Allow-Origin", "*")
+                call.respondText(ncco, ContentType.Application.Json)
+            }
+        }
+    }.start(wait = true)
 }
