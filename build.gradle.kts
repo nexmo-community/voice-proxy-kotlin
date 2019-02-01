@@ -27,6 +27,16 @@ dependencies {
 
     // Use the Kotlin JUnit integration
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    // Use Ktor for serving web
+    implementation("io.ktor:ktor-server-core:1.1.2")
+
+    // Use Netty embedded
+    implementation("io.ktor:ktor-server-netty:1.1.2")
+
+    // Use Nexmo Client
+    implementation("com.nexmo:client:4.0.1")
+
 }
 
 application {
