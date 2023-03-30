@@ -29,7 +29,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
     // Use Ktor for serving web
-    implementation("io.ktor:ktor-server-core:1.1.2")
+    implementation("io.ktor:ktor-server-core:2.0.0")
 
     // Use Netty embedded
     implementation("io.ktor:ktor-server-netty:1.1.2")
