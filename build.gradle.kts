@@ -32,7 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.1.2")
 
     // Use Netty embedded
-    implementation("io.ktor:ktor-server-netty:1.1.2")
+    implementation("io.ktor:ktor-server-netty:1.6.8")
 
     // Use Nexmo Client
     implementation("com.nexmo:client:4.0.1")
