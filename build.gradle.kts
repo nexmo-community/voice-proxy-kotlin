@@ -35,7 +35,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:1.1.2")
 
     // Use Nexmo Client
-    implementation("com.nexmo:client:4.0.1")
+    implementation("com.nexmo:client:4.3.1")
 
 }
 
